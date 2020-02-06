@@ -19,17 +19,16 @@ class VideoContext extends Component {
         this.setState({
           list: res.data,
           loading: false
-        }, () => { window.location.reload(true) })
+        })
       })
   }
 
   handleDetail = id => {
     // let detail = Object.assign({}, [...this.state.list]);
     let detail = [...this.state.list]
-    // console.log(detail)
     const getId = detail.find(el => el.id == id)
     console.log(getId)
-    // return getId
+    return getId
   }
 
   render() {

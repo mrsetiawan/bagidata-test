@@ -6,12 +6,13 @@ import { removeHTMLTags } from '../helpers.js'
 export default class ListVideoChild extends Component {
   render() {
 
-    const { id, title } = this.props.list
+    const { id, title,media_url } = this.props.list
+    let str = media_url.split("/")
     return (
       <Col md={4} className='mb-3'>
-        <Link to={`/list/${id}`}>
+        <Link to={`/list/${id}`}> 
           <article className='thumb'>
-            <img src="https://geekltd.com/wp-content/uploads/2017/08/play-youtube-11.jpg" alt="" width="100%" />
+            <img src={`https://img.youtube.com/vi/${str[str.length-1]}/hqdefault.jpg`} alt="" width="100%" height="340px" />
             <p className='title-info'>{removeHTMLTags(title.substring(0, 30)) + '...'}</p>
           </article>
         </Link>

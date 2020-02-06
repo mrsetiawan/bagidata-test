@@ -7,7 +7,9 @@ import ListVideoChild from './ListVideoChild'
 import { ParentContext } from '../context'
  
 export default class ListVideo extends Component {
+  
   static contextType = ParentContext;
+
 
   render() {
 

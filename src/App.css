@@ -25,7 +25,11 @@ body {
   line-height: 1.4;
   font-size: 16px;
 }
-
+a {
+  cursor: pointer !important;
+  text-decoration: none !important;
+  color: #000000 !important;
+}
 h1 {
   font-size: 3em;
   line-height: 1;
@@ -124,11 +128,32 @@ h6 {
   width: 80vw;
   margin: 0 auto;
 }
-
+.capilatize {
+  text-transform: capitalize;
+}
+.icon-color {
+  font-size: 1.5rem;
+  color: #000000;
+}
+.recomended-height {
+  max-height: calc(65vh);
+  padding: 15px;
+  overflow-y: scroll;
+}
 .error {
   text-align: center;
   text-transform: uppercase;
   margin: 2rem 0;
+}
+.figure-caption{
+  display: inline-block !important;
+  padding-left: 15px;
+  position: absolute;
+}
+.figure-img{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
 }
 
 @media screen and (min-width: 776px) {
