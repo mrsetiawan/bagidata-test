@@ -27,7 +27,6 @@ class VideoContext extends Component {
     // let detail = Object.assign({}, [...this.state.list]);
     let detail = [...this.state.list]
     const getId = detail.find(el => el.id == id)
-    console.log(getId)
     return getId
   }
 

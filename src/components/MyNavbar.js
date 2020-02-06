@@ -20,11 +20,11 @@ export default class MyNavbar extends Component {
       <Navbar bg="dark" variant="dark" sticky="top">
         <Container>
           <Navbar.Brand>
-            {/* <Link to='/list'> */}
+            <Link to='/list'>
               <img alt="bagi data" src={logo} width="30" height="30" className="d-inline-block align-top"/>
-              wadedaw
+              <span className='text-white'>wadedaw</span>
               {/* Bagidata.com */}
-            {/* </Link> */}
+            </Link>
           </Navbar.Brand>
           <Nav className="mr-auto" />
           <Form inline>
