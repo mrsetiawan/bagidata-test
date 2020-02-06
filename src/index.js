@@ -4,11 +4,13 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router } from 'react-router-dom'
-
+import { VideoContext } from './context'
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>
+  <VideoContext>
+    <Router>
+      <App />
+    </Router>
+  </VideoContext>
   , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
