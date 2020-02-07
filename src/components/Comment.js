@@ -16,7 +16,6 @@ export default class Comment extends Component {
   componentDidMount() {
     const { endpoint } = this.state;
     const socket = socketIOClient(endpoint);
-    console.log(socket)
     socket.on("FromAPI", data => this.setState({ response: data }));
   }
 
@@ -24,8 +23,7 @@ export default class Comment extends Component {
 
   render() {
     
-    const { isToggle,response  } = this.state
-    console.log(response)
+    const { isToggle } = this.state
     return (
       <>
         <Form.Control 
@@ -34,7 +32,7 @@ export default class Comment extends Component {
           className='input-comment' 
           onClick={this.handleToggle}
         />
-        {isToggle ? null : <Button variant='success' size='sm' style={{float: 'right'}}>Comment</Button>}
+        {isToggle ? null : <Button variant='success' size='sm' style={{float: 'right',marginBottom: '15px'}}>Comment</Button>}
       </>
     )
   }

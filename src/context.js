@@ -5,7 +5,7 @@ const ParentContext = React.createContext();
 
 class VideoContext extends Component {
 
-  controller = new listVideoController;
+  controller = new listVideoController();
 
   state = {
     list:[],

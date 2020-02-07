@@ -3,12 +3,10 @@ import MyNavbar from '../components/MyNavbar'
 import { ParentContext } from './../context'
 import { Link } from 'react-router-dom'
 import {
-  Button,
   Container,
   Col,
   Row,
-  Figure,
-  Form
+  Figure
 } from 'react-bootstrap'
 import { AiFillLike, AiTwotoneDislike } from "react-icons/ai"
 import ThumbnailVideos from './../components/ThumbnailVideos'
@@ -24,7 +22,7 @@ export default class DetailVideo extends Component {
   }
 
   componentDidUpdate(){
-    if(this.props.match.params.id != this.state.id){
+    if(this.props.match.params.id !== this.state.id){
       this.setState({
         id:this.props.match.params.id,
         loading:false,
@@ -81,7 +79,7 @@ export default class DetailVideo extends Component {
                   <hr style={{ border: '1px solid #f3f3f3', width: '100%' }} />
                   <Comment />
                   {comments.map((item, idx) => 
-                    <Col xs={12} className='pl-0 mt-3 mb-3'>
+                    <Col xs={12} key={idx} className='pl-0 mt-1 mb-1'>
                       <Figure>
                         <Figure.Image className='figure-img' src='http://fh.unpad.ac.id/wp-content/uploads/2014/10/blank-avatar.jpeg' />
                         <Figure.Caption className='figure-caption'>

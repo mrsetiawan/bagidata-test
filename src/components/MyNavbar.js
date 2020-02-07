@@ -22,8 +22,7 @@ export default class MyNavbar extends Component {
           <Navbar.Brand>
             <Link to='/list'>
               <img alt="bagi data" src={logo} width="30" height="30" className="d-inline-block align-top"/>
-              <span className='text-white'>wadedaw</span>
-              {/* Bagidata.com */}
+              <span className='text-white'>Bagidata.com</span>
             </Link>
           </Navbar.Brand>
           <Nav className="mr-auto" />

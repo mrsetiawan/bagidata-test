@@ -25,7 +25,7 @@ export default class ThumbnailVideos extends Component {
                 <Card.Body className='p-0'>
                   <Row>
                     <Col xs={5} className='p-0'>
-                      <img src={`https://img.youtube.com/vi/${str[str.length-1]}/hqdefault.jpg`} width='100%' />
+                      <img src={`https://img.youtube.com/vi/${str[str.length-1]}/hqdefault.jpg`} alt={item.title} width='100%' />
                     </Col>
                     <Col xs={7}>
                       <small style={{ display: 'block', marginBottom: '10px' }}>
