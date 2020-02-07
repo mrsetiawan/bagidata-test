@@ -3,7 +3,8 @@ import MainBg from '../components/MainBg'
 import {
   Form,
   Button,
-  Card
+  Card,
+  Col
 } from 'react-bootstrap'
 
 import swal from 'sweetalert';
@@ -50,7 +51,8 @@ export default class Register extends Component {
       <Redirect to="/" />
     ) : (
       <MainBg>
-        <Card>
+        <Col md={3} xs={12}>
+          <Card>
           <Card.Body>
             <p className='text-center'><b>Form Register</b></p>
             <br />
@@ -60,6 +62,7 @@ export default class Register extends Component {
                 <Form.Control 
                   type="text" 
                   placeholder="Enter UserName" 
+                  className='input-comment'
                   onChange={({ target }) => this.setState({ username: target.value })} 
                 />
               </Form.Group>
@@ -68,15 +71,17 @@ export default class Register extends Component {
                 <Form.Control 
                   type="password" 
                   placeholder="Password" 
+                  className='input-comment'
                   onChange={({ target }) => this.setState({ password: target.value })} 
                 />
               </Form.Group>
-              <Button variant="primary" type="submit" block>
+              <Button variant="success" type="submit" block>
                 Submit
               </Button>
             </Form>
           </Card.Body>
         </Card>
+        </Col>
       </MainBg>
     )
   }

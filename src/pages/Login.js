@@ -61,6 +61,7 @@ class Login extends Component {
                     <Form.Control
                       type="text"
                       placeholder="Enter UserName"
+                      className='input-comment'
                       required
                       onChange={({ target }) => this.setState({ username: target.value })}
                     />
@@ -71,6 +72,7 @@ class Login extends Component {
                     <Form.Control
                       type="password"
                       placeholder="Password"
+                      className='input-comment'
                       required
                       onChange={({ target }) => this.setState({ password: target.value })}
                     />
@@ -78,9 +80,9 @@ class Login extends Component {
                   <Link to='/register'>
                     <p className='pull-right'>Register</p>
                   </Link>
-                  <Button variant="primary" type="submit" block>
+                  <Button variant="success" type="submit" block>
                     Submit
-              </Button>
+                  </Button>
                 </Form>
               </Card.Body>
             </Card>

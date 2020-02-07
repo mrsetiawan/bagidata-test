@@ -152,9 +152,29 @@ h6 {
   position: absolute;
 }
 .figure-img{
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+}
+
+.input-comment {
+  border:none;
+  border-bottom: 1px solid rgb(243, 243, 243);
+  padding: 5px 10px;
+  outline: none;
+  margin-bottom: 10px;
+  cursor: pointer;
+  box-shadow: none !important;
+  border-radius: 0;
+  
+}
+.form-control:focus {
+  border-color: #28a745 !important;
+}
+
+
+[placeholder]:focus::-webkit-input-placeholder {
+  transition: text-indent 0.4s 0.4s ease; 
 }
 
 @media screen and (min-width: 776px) {

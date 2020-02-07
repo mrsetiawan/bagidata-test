@@ -12,13 +12,27 @@ import {
 } from 'react-bootstrap'
 import { AiFillLike, AiTwotoneDislike } from "react-icons/ai"
 import ThumbnailVideos from './../components/ThumbnailVideos'
+import Comment from '../components/Comment'
+
 export default class DetailVideo extends Component {
 
   static contextType = ParentContext
 
   state = {
-    id: this.props.match.params.id
+    id: this.props.match.params.id,
+    loading:true,
   }
+
+  componentDidUpdate(){
+    if(this.props.match.params.id != this.state.id){
+      this.setState({
+        id:this.props.match.params.id,
+        loading:false,
+      })
+    }
+  }
+
+  handleToggle = () => this.setState({isToggle:!this.state.isToggle})
 
   render() {
     const { handleDetail } = this.context
@@ -35,7 +49,14 @@ export default class DetailVideo extends Component {
       )
     }
 
-    const { id, title, description, media_url, likers, dislikers, comments } = detail
+    const { 
+      title, 
+      description, 
+      media_url, 
+      likers, 
+      dislikers, 
+      comments } = detail
+
     return (
       <>
         <MyNavbar />
@@ -53,18 +74,14 @@ export default class DetailVideo extends Component {
                   </Col>
                   <Col md={2} className='pull-right p-0'>
                     <AiFillLike className='icon-color' /> &nbsp;
-                  <span>{likers}</span> &nbsp;
-                  <AiTwotoneDislike className='icon-color' /> &nbsp;
-                  <span>{dislikers}</span>
+                    <span>{likers}</span> &nbsp;
+                    <AiTwotoneDislike className='icon-color' /> &nbsp;
+                    <span>{dislikers}</span>
                   </Col>
                   <hr style={{ border: '1px solid #f3f3f3', width: '100%' }} />
-                </Row>
-                <div className='pt-3'>
-                  <Col className='pb-5 pl-0'>
-                    <Form.Control type="text" placeholder="comment here" className='input-comment' />
-                  </Col>
+                  <Comment />
                   {comments.map((item, idx) => 
-                    <Col className='pl-0 pb-3'>
+                    <Col xs={12} className='pl-0 mt-3 mb-3'>
                       <Figure>
                         <Figure.Image className='figure-img' src='http://fh.unpad.ac.id/wp-content/uploads/2014/10/blank-avatar.jpeg' />
                         <Figure.Caption className='figure-caption'>
@@ -74,8 +91,7 @@ export default class DetailVideo extends Component {
                       </Figure>
                     </Col>
                   )}
-
-                </div>
+                </Row>
               </Col>
               <Col md={4} xs={12} className='pr-0'>
                 <section className='recomended-height'>

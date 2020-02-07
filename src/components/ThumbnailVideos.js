@@ -4,8 +4,7 @@ import { ParentContext } from './../context'
 import {
   Row,
   Col,
-  Card,
-  Button
+  Card
 } from 'react-bootstrap'
 import { removeHTMLTags } from '../helpers.js'
 
@@ -20,7 +19,7 @@ export default class ThumbnailVideos extends Component {
     let str = item.media_url.split("/")
       return (
         <div key={idx}>
-          {/* <Link to={`/list/${item.id}`}> */}
+          <Link to={`/list/${item.id}`}>
             <Col xs={12} className='mb-3'>
               <Card>
                 <Card.Body className='p-0'>
@@ -33,14 +32,14 @@ export default class ThumbnailVideos extends Component {
                         {removeHTMLTags(item.title.substring(0, 30)) + '...'}
                       </small>
                       <small>
-                        tes
+                      {removeHTMLTags(item.description.substring(0, 30)) + '...'}
                     </small>
                     </Col>
                   </Row>
                 </Card.Body>
               </Card>
             </Col>
-          {/* </Link> */}
+          </Link>
         </div>
       )
     })
