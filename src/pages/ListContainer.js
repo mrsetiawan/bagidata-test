@@ -7,14 +7,14 @@ import ListVideoChild from './ListVideoChild'
 import { ParentContext } from '../context'
  
 export default class ListVideo extends Component {
-  
+
   static contextType = ParentContext;
 
   render() {
-
+    
     let { list,loading } = this.context;
     list = list.map(myList => <ListVideoChild key={myList.id} list={myList} />)
-    
+
     return(
       <>
         <MyNavbar />
